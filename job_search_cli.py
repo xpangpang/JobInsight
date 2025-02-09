@@ -1,10 +1,12 @@
+from basic_crawler import fetch_jobs
+from keyword_analyzer import analyze_keywords
 def main():
-    search_keyword = input("请输入搜索关键词（如：Python 上海）: ")
+    search_keyword = input("请输入搜索关键词（如：101210100 Python）: ")
     city, keyword = search_keyword.split()  # 简单分割输入
 
     # 调用爬虫功能
     print(f"\n正在爬取{city}地区的{keyword}岗位...")
-    job_titles = fetch_job_titles(keyword, city)
+    job_titles = fetch_jobs(keyword, city)
 
     # 调用热词分析功能
     hot_words = analyze_keywords(job_titles)
